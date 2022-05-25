@@ -1,0 +1,221 @@
+.header {
+    border: 1px solid #EEEEEE;
+     .container {
+            display: flex;
+            align-items: center;
+        }
+}
+
+.menu-list {
+    display: none; 
+
+    @media screen and (min-width: 768px){
+    display: flex;
+     .link {
+            color: var(--body-color);
+    
+            @include font(500, 14px, 1.14, 0.02em);
+            
+            transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            &:hover,
+                &:focus {
+                    color: var(--accent-color);
+                }
+        }
+}
+}
+.menu-list .link.current {
+    color: var(--accent-color);
+}
+.menu-list__link {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.current {
+    position: relative;
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    &::after {
+            content: "";
+            width: 100%;
+            height: 4px;
+            position: absolute;
+            display: block;
+            left: 0;
+            bottom: 0;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+}
+
+.menu-list__item:not(:last-child) {
+    margin-right: 50px;
+}
+
+.connect__mail,
+.connect__tel {
+    color: var(--header-color);
+
+    @include font(500, 14px, 1.14, 0.02em);
+    
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+        &:focus {
+            color: var(--accent-color);
+        }
+}
+
+.connect {
+    display: none; 
+
+    @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column; 
+    margin-left: auto;
+    .link {
+            display: inline-flex;
+            align-items: center;
+            fill: currentColor;
+        }
+    }
+         @media screen and (min-width: 1200px){
+            @include align; 
+            flex-direction: row;
+         }
+}
+.connect__mail {
+    margin-bottom: 10px;
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 0px;
+        }
+}
+.connect__tel {
+    @media screen and (min-width: 1200px){
+    margin-left: 30px;
+    }
+}
+
+.icon-mail {
+    width: 16px;
+    height: 12px;
+    margin-right: 10px;
+}
+
+.icon-tel {
+    width: 10px;
+    height: 16px;
+    margin-right: 10px;
+}
+.menu-open-btn{
+    margin-left: auto;
+    border: none;
+    background-color: transparent; 
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+    &:focus{
+        fill: var(--accent-color);
+    }
+    @media screen and (min-width: 768px){
+        display: none; 
+    }
+}
+
+.menu-close-btn {
+    display: block;
+    margin-left: auto; 
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    border: none;
+    background-color: transparent;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+        &:focus {
+            fill: var(--accent-color);
+        }
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+.navigation{
+width: 100%;  
+flex-grow: 1;
+margin-bottom: 20px; 
+}
+.mob-menu{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--title-color); 
+    width: 100vw;
+    height: 100vh; 
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(0.75);
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding-left: 25px; 
+        justify-content: space-between; 
+        align-items: flex-start; 
+    }
+}
+
+.mob-menu-list__link{
+    @include font(500, 40px, 1.18, 0.02em);
+    text-align: center;
+    color: var(--body-color); 
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+    &:focus{
+        color: var(--accent-color);
+    }
+}
+
+.mob-menu-list__item{
+    &:not(:last-child){
+        margin-bottom: 32px; 
+    }
+}
+
+.mob-connect{
+    display: flex;
+    flex-direction: column-reverse; 
+}
+
+.mob-connect__tel{
+    @include font(500, 34px, 1.18, 0.02em);
+    color: var(--accent-color);
+    margin-bottom: 32px;
+}
+
+.mob-connect__mail{
+    @include font(500, 24px, 1.17, 0.02em);
+    color: var(--header-color); 
+}
+.mob-soc{
+    margin-top: 64px; 
+}
+.mob-soc-list{
+    display: flex;
+    padding-bottom: 48px;
+}
+.mob-soc-list_item{
+    &:not(:last-child) {
+        margin-right: 10px; 
+        border-right: 1px solid rgba(33, 33, 33, 0.2);
+        padding-right: 10px; 
+        }
+}
+.mob-soc-list_link{
+    @include font(500, 18px, 1.22, 0.02em);
+    color: var(--accent-color); 
+}
+
+.no-scroll{
+    overflow: hidden;
+}

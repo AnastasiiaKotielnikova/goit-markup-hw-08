@@ -1,0 +1,12 @@
+.title {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: var(--body-color);
+
+    @include font(700, 28px, 1.18, 0.03em);
+    text-align: center;
+    @media screen and (min-width: 1200px) {
+            @include font(700, 36px, 1.17, 0.03em);
+            margin-bottom: 50px; 
+        }
+}

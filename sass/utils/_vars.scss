@@ -1,0 +1,20 @@
+:root {
+    --body-color: #212121;
+    --title-color: #FFFFFF;
+    --header-color: #757575;
+    --section-color: #E5E5E5;
+    --main-color: #2F303A;
+    --accent-color: #2196F3;
+}
+
+@mixin font($fw, $fs, $lh, $ls) {
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;
+    letter-spacing: $ls; 
+}
+
+@mixin align {
+    display: flex;
+    justify-content: center;
+}
